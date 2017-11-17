@@ -1,14 +1,23 @@
-Vue.component('bar-chart', {
+Vue.component('multibar-chart', {
   extends: VueChartJs.Bar,
   props: ['data', 'options'],
   mounted () {
     var data = this.data || {
-      labels: [2007,2008,2009,2010,2011,2012,2013,2014,2015],
+      labels: ["MMC","Protests of Islam critical PEGIDA movement in Dresden","Financial Crisis in Greece","Ukraine conflict between Russia and Western Countries"],
       datasets: [
         {
-          label: 'Rhinoceros tués chaque année par le braconnage en Afrique du Sud',
+          label: 'Very high trust',
           backgroundColor: '#f87979',
-          data: [13, null,122,333,448,668,1004,1215,749],
+          data: [0.03,0.03,0.04,0.02],
+          datalabels: {
+            align: 'end',
+            anchor: 'end'
+          }
+        },
+        {
+          label: 'High trust',
+          backgroundColor: '#f87979',
+          data: [0.45,0.37,0.31,0.3],
           datalabels: {
             align: 'end',
             anchor: 'end'
@@ -30,8 +39,7 @@ Vue.component('bar-chart', {
 					color: '#c46060',
 					font: {
 						weight: 'bold'
-					},
-					formatter: Math.round
+					}
 				}
 			},
       scales: {
